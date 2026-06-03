@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bug Reports</title>
+    <link rel="icon" type="image/png" href="images/bug_logo.jpg">    
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/scripts.js" defer></script>
+</head>
+
+<body>
+    <header>
+       <nav class="navbar">
+            <!--LOGO-->
+            <div class="header_left">
+                <!--LOGO-->
+                <img src="images/bug_logo.jpg" alt="UAT BUG PORTAL LOGO">
+                <!--TITLE-->
+                  <h1>UAT Bug Portal</h1>
+            </div>
+
+            <div class="nav_control">
+                <!--EXPORT FILE BTN-->
+                <button id="export_btn">Export</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+    <!-- DASHBOARD REPORT CARDS (ALL COLORS) -->
+    <section class="tickets_shown">
+        <div class="total_bugs">
+            <h2>Total Bugs</h2>
+            <p id="bug_count">0</p>
+        </div>
+
+        <div class="critical_risk">
+            <h2>Critical</h2>
+            <p id="critical_risk_count">0</p>
+        </div>
+
+        <div class="high_risk">
+            <h2>High</h2>
+            <p id="high_risk_count">0</p>
+        </div>
+
+        <div    class="medium_risk">
+            <h2>Medium</h2>
+            <p id="medium_risk_count">0</p>
+        </div>
+
+        <div class="low_risk">
+            <h2>Resolved-Ready</h2>
+            <p id="low_risk_count">0</p>
+        </div>
+    </section>
+
+    <!-- REPORTS SECTION -->
+    <div class="bottom-container">
+
+        <!-- CREATE NEW REPORT -->
+        <section class="createNew_ticket">
+            <h2>New Bug Report</h2>
+            <p>Please fill out the form below to submit a new bug report.</p>
+
+            <form id="bug_form">
+
+                <label for="bug_title">Bug Title *</label>
+                <input type="text" id="bug_title"
+                    placeholder="Login button not working on Firefox."
+                    required>
+
+                <label for="app_feature">Module/Feature *</label>
+                <input type="text" id="app_feature"
+                    placeholder="e.g Authentication"
+                    required>
+
+                <label for="bug_steps">Steps to Reproduce *</label>
+                <textarea id="bug_steps"
+                    placeholder="1. Open login page 
+2. Enter credentials 
+3. Click login button"
+                    required></textarea>
+
+                <label for="expected_result">Expected Result *</label>
+                <textarea id="expected_result"
+                    placeholder="User should be logged in and redirected to dashboard."
+                    required></textarea>
+
+                <label for="actual_result">Actual Result *</label>
+                <textarea id="actual_result"
+                    placeholder="Page hangs and shows blank screen."
+                    required></textarea>
+
+                <label for="severity_btn">Severity *</label>
+                <select id="severity_btn">
+                    <option value="" disabled selected hidden>Select Severity</option>
+                    <option>Critical</option>
+                    <option>High</option>
+                    <option>Medium</option>
+                    <option>Low</option>
+                </select>
+
+                <label for="environment_btn">Environment *</label>
+                <select id="environment_btn">
+                    <option value="" disabled selected hidden>Select Environment</option>
+                    <option>Chrome</option>
+                    <option>Safari</option>
+                    <option>Firefox</option>
+                    <option>Edge</option>
+                    <option>Other</option>
+                </select>
+
+                <label for="tester_credentials">Tester Name *</label>
+                <input type="text" id="tester_credentials"
+                    placeholder="e.g Jodi Cornelius"
+                    required>
+
+                <!-- Upload -->
+                <label>Screenshots (Optional)</label>
+                <div class="upload_box" id="uploadBox">
+                    <p>Drag & Drop files or click to upload</p>
+                    <input type="file" id="fileInput" name="screenshots" accept="image/*">
+                </div>
+
+                <!-- Buttons -->
+                <div class="form_btn">
+                    <button type="reset" class="reset_btn">Reset</button>
+                    <button type="submit" class="submit_btn">Submit Bug Report</button>
+                </div>
+
+            </form>
+        </section>
+
+        <!-- LIVE SUBMITTED REPORTS -->
+        <section class="live_reports">
+            <h2>Reports</h2>
+            <!-- Counter starts on 0 -->
+            <p id="reportCounter">0 reports</p>
+
+            <div id="reportList" class="report_list"></div>
+        </section>
+
+    </div>
+
+</main>
+</body>
+
+<footer>
+    <p> 2026 Jodi Cornelius (UAT BUG PORTAL). All rights reserved.</p>
+</footer>
+</html>
